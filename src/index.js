@@ -1,5 +1,9 @@
 import './styles.css';
-import { Todo } from './classes/todo.class.js';
+import { Todo , TodoList } from './classes';
 
+const todoList = new TodoList();
 const tarea = new Todo('Aprender JavaScript');
-console.log(tarea);
+const tarea1 = new Todo('Aprender Angular');
+todoList.insertarTodo(tarea);
+todoList.insertarTodo(tarea1);
+console.log(todoList);
