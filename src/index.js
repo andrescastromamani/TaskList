@@ -1,9 +1,10 @@
 import './styles.css';
 import { Todo , TodoList } from './classes';
+import { crearTodoHtml } from './js/componentes';
 
 const todoList = new TodoList();
 const tarea = new Todo('Aprender JavaScript');
-const tarea1 = new Todo('Aprender Angular');
 todoList.insertarTodo(tarea);
-todoList.insertarTodo(tarea1);
 console.log(todoList);
+tarea.completado = false;
+crearTodoHtml(tarea);
