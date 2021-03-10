@@ -29,7 +29,6 @@ export const crearTodoHtml = (todo)=>{
 //eventos
 txtInput.addEventListener('keyup', ( event ) =>{
     if(event.keyCode === 13 && txtInput.value.length > 0){
-        console.log(txtInput.value);
         const nuevoTodo = new Todo(txtInput.value);
         todoList.insertarTodo(nuevoTodo);
         crearTodoHtml( nuevoTodo);
@@ -44,6 +43,8 @@ divTodoList.addEventListener('click', (event)=>{
     if(nombreElemento.includes('input')){
         todoList.completadoTodo(todoId);
         todoElemento.classList.toggle('completed');
+    }else if(nombreElemento.includes('button')){
+        todoList.eliminarTodo(todoId);
+        divTodoList.removeChild( todoElemento );
     }
-    console.log(todoList);
 })
