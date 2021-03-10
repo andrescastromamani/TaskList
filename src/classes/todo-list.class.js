@@ -13,8 +13,13 @@ export class TodoList {
 
     }
 
-    comletadoTodo( id ){
-
+    completadoTodo( id ){
+        for(const todo of this.todos){
+            if(todo.id == id){
+                todo.completado = !todo.completado;
+                break;
+            }
+        }
     }
 
     eliminarCompletados(){
